@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter Button</title>
+
+<!-- make a button where left side have "+" marking and right side have "-" marking and middle have display count. If we press "+" count will be increase and we press "-" count will be deceress. -->
+
+<style>
+  .counter-button {
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 5px; 
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+  }
+  .count {
+    flex: 1;
+    text-align: center;
+  }
+  .button {
+    padding: 5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="counter-button" id="counterButton">
+
+<button class="button" id="increaseCount">+</button> 
+<button class="count" id="countDisplay">0</button>
+<button class="button" id="decreaseCount">-</button>
+</div>
+
+<script>
+  let count = 0;
+  
+  // document.getElementById('increaseCount').addEventListener('click', function() {
+  //   // click 4 times then    
+  //   if(count < 4 ){
+  //   count++;
+  //   document.getElementById('countDisplay').innerText = count;
+  // }
+  // });
+  document.getElementById('increaseCount').addEventListener('click', function() {
+    // click more then   
+    count++;
+    document.getElementById('countDisplay').innerText = count;
+  });
+  document.getElementById('decreaseCount').addEventListener('click', function() {
+    // not less then 0
+    if (count > 0) {
+      count--;
+      document.getElementById('countDisplay').innerText = count;
+    }
+  });
+</script>
+</body>
+</html>
